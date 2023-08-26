@@ -27,7 +27,8 @@ Modüller, uygulama kodumuzu bağımsız birimlere, her biri işlevselliğin bir
 Aşağıdaki örnek, fırın personeli için üç modülü, fırında yaparken gerçekleştirdikleri işlevleri ve fırını içermektedir. Bir modül tarafından export edilen işlevselliklerin diğer modül tarafından içe aktarıldığını yani import edildiğini ve kullanıldığını görebiliriz.
 
 ```javascript
-// Dosya Adı: staff.mjs // ========================================= 
+// Dosya Adı: staff.mjs
+// ========================================= 
 // specify (public) exports that can be consumed by other // modules 
 export const baker = {
 bake(item) {
@@ -37,7 +38,8 @@ console.log( `Woo! I just baked ${item}` );
 ```
 
 ```javascript
-// Dosya Adı: cakeFactory.mjs // ========================================= 
+// Dosya Adı: cakeFactory.mjs
+// ========================================= 
 // specify dependencies import baker from "/modules/staff.mjs"; 
 export const oven = {
   makeCupcake(toppings) {
@@ -334,5 +336,5 @@ Unutmayın ki Web Bileşenleri topluluğu gibi web için geliştirme yaklaşıml
 Bu bölüm, Modüller ve Sınıflar için JavaScript dilindeki sözdizimini tanıttı. Bu özellikler, nesne yönelimli tasarım ve modüler programlama prensiplerine uygun olarak kod yazmamıza olanak tanır. Bu kavramları farklı tasarım desenlerini sınıflandırmak ve tanımlamak için kullanacağız. Bir sonraki bölüm farklı tasarım deseni kategorileri hakkında konuşuyor.
 
 ## İlgili Okuma
-[JavaScript Modülleri v8 üzerinde](https://v8.dev/features/modules)
-[JavaScript Modülleri MDN üzerinde](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules)
+- [JavaScript Modülleri v8 üzerinde](https://v8.dev/features/modules)
+- [JavaScript Modülleri MDN üzerinde](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules)
