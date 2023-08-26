@@ -29,19 +29,30 @@ Aşağıdaki örnek, fırın personeli için üç modülü, fırında yaparken g
 ```javascript
 // Dosya Adı: staff.mjs // ========================================= 
 // specify (public) exports that can be consumed by other // modules 
-export const baker = { bake(item) { console.log( `Woo! I just baked ${item}` ); } };
+export const baker = {
+bake(item) {
+console.log( `Woo! I just baked ${item}` );
+    }
+};
 ```
 
 ```javascript
 // Dosya Adı: cakeFactory.mjs // ========================================= 
 // specify dependencies import baker from "/modules/staff.mjs"; 
-export const oven = { makeCupcake(toppings) { baker.bake( "cupcake", toppings ); }, makeMuffin(mSize) { baker.bake( "muffin", size ); } }
+export const oven = {
+  makeCupcake(toppings) {
+    baker.bake( "cupcake", toppings ); },
+  makeMuffin(mSize) {
+    baker.bake( "muffin", size ); }
+}
 ```
 
 ```javascript
 // Dosya Adı: bakery.mjs 
 // ========================================= 
-import {cakeFactory} from "/modules/cakeFactory.mjs"; cakeFactory.oven.makeCupcake( "sprinkles" ); cakeFactory.oven.makeMuffin( "large" );
+import {cakeFactory} from "/modules/cakeFactory.mjs";
+cakeFactory.oven.makeCupcake( "sprinkles" );
+cakeFactory.oven.makeMuffin( "large" );
 ```
 
 Genellikle bir modül dosyası birkaç ilişkili fonksiyon, sabit ve değişken içerir. Bu kaynakları toplu halde export etmek için dosyanın sonunda tek bir export ifadesi kullanabilirsiniz. Export etmek istediğiniz modül kaynaklarını virgülle ayrılmış bir liste şeklinde belirtebilirsiniz.
